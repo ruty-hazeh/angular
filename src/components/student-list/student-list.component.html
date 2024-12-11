@@ -1,0 +1,22 @@
+<ng-template #myTemplate>
+    <div>-------list of students-------</div>
+  </ng-template>
+
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+
+@for(item of students;track item.Id)
+{
+    <li>{{item.Id}} {{item.Name}} </li>
+    <button (click)= "viewDetailsStudent(item.Id)" >עריכה</button>
+    @if (selectedid==item.Id){
+        <app-student-details [currentStudent]="item"></app-student-details>
+    }
+}
+<br>
+<button (click)="AddStudent()">add</button>
+@if (selectedid==-1){
+    <app-student-details (saveStudent)="ParentSave($event)" [currentStudent]="null"></app-student-details>
+}
+
+  
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>

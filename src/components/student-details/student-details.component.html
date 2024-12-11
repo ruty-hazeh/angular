@@ -1,0 +1,18 @@
+<app-infromation-popup></app-infromation-popup>
+<div>
+    id: <span>{{currentStudent.Id}}</span>
+    Name:<input #Name type="text" [value]="currentStudent.Name">
+    Address:<input #Address type="text" [value]="currentStudent.Address">
+    Phone:<input #Phone type="text" [value]="currentStudent.Phone">
+    AvgMark:<input #AvgMark type="number" [value]="currentStudent.AvgMark">
+    @if (!currentStudent.isActive)
+    {
+        DepartureDate:<input #DepartureDate type="date" [value]="currentStudent.DepartureDate">
+    }
+    @if (currentStudent.isPay){
+        <app-courses></app-courses>
+    }
+
+    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value)">save</button>
+    <button (click)="DeleteStudent()">delete</button>
+</div>

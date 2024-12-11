@@ -1,0 +1,14 @@
+<!-- <div #scrollableList class="scrollable-container">
+    @for (course of courses; track course.IdCourse)
+      <div appCourseColor [typecourse]="course.NameCourse">
+        {{ course.IdCourse }} - {{ course.NameCourse }} {{ course.SubjectCourse }}
+      </div>
+  </div> -->
+
+  <div #scrollableList class="scrollable-container">
+    <div *ngFor="let course of courses; ">
+      <div appCourseColor [typecourse]="course.NameCourse">
+        {{ course.IdCourse }} - {{ course.NameCourse }} {{ course.SubjectCourse }}
+      </div>
+    </div>
+  </div>

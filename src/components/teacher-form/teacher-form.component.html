@@ -1,0 +1,22 @@
+
+<form (ngSubmit)="onSubmit()">
+    <label for="id">Code:</label>
+    <input id="id" [(ngModel)]="teacher.Id" name="id">
+
+
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="teacher.Name" name="name" required>
+    
+    <label for="classes">Classes:</label>
+    <input id="classes" [(ngModel)]="teacher.Classes" name="classes">
+    
+    <button type="submit">Submit</button>
+</form>
+
+<div>teacher list:</div>
+<div>
+    @for (t of this.teachers; track t) {
+        {{t.Id}}  {{t.Name}}  {{t.Classes}}
+        <div></div>
+    }
+</div>
