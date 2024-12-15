@@ -20,12 +20,13 @@ export class TeacherService {
     this.teachers.push(t);
   }
   updateTeacher(t: Teacher){
-    let i=this.teachers.findIndex(teacher=>teacher.Id===t.Id);
-    if(i!=-1)
+    const teach=this.teachers.find(teacher=>teacher.Id==t.Id);
+    if(teach)
     {
-          this.teachers[i].Name=t.Name;
-          this.teachers[i].Classes=t.Classes;  
+          teach.Name=t.Name;
+          teach.Classes=t.Classes;  
     }
+
   }
   deleteTeacher(id:number){
     this.teachers=this.teachers.filter(teacher=>teacher.Id!=id);

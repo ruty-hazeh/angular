@@ -13,6 +13,7 @@ import { IconsTextPipe } from '../pipes/icons-text.pipe';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  t?: Teacher=new Teacher(1,"yochi",["ב3","ג2"]);
   title = 'ruty';
   whatTime(){
     let currentHour=new Date().getHours();

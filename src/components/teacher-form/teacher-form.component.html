@@ -1,16 +1,27 @@
 
-<form (ngSubmit)="onSubmit()">
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
     <label for="id">Code:</label>
-    <input id="id" [(ngModel)]="teacher.Id" name="id">
-
-
-    <label for="name">Name:</label>
-    <input id="name" [(ngModel)]="teacher.Name" name="name" required>
-    
+    <input [(ngModel)]="teacher.Id" name="id" #id1="ngModel" required>
+    @if(id1.touched && id1.hasError('required')){
+        <small class="error-invalid">id is required</small>
+    }
+    <div></div>
+    <label for="username">Name:</label>
+    <input name="username" [(ngModel)]="teacher.Name"  #username1="ngModel" required minlength="2">
+    @if(username1.touched && username1.hasError('required')){
+        <small class="error-invalid">name is required</small>
+    }
+    @if(username1.hasError('minlength')){
+        <small class="error-invalid">name must be at least 2 characters</small>
+    }
+    <div></div>
     <label for="classes">Classes:</label>
-    <input id="classes" [(ngModel)]="teacher.Classes" name="classes">
-    
-    <button type="submit">Submit</button>
+    <input name="classes" [(ngModel)]="teacher.Classes" #classes1="ngModel" required>
+    @if(classes1.touched && classes1.hasError('required')){
+        <small class="error-invalid">classes are required</small>
+    }
+    <div></div>
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
 </form>
 
 <div>teacher list:</div>
