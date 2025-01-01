@@ -5,6 +5,7 @@ import { InfromationPopupComponent } from '../components/infromation-popup/infro
 import { StudentDetailsComponent } from '../components/student-details/student-details.component';
 import { StudentListComponent } from '../components/student-list/student-list.component';
 import { TeacherFormComponent } from '../components/teacher-form/teacher-form.component';
+import { ReactiveFormComponent } from '../components/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     // {path:'',component:AppComponent},
@@ -12,5 +13,7 @@ export const routes: Routes = [
     {path:'informationPopup',component:InfromationPopupComponent},
     {path:'studentDetails',component:StudentDetailsComponent},
     {path:'studentList',component:StudentListComponent},
-    {path:'teacherForm',component:TeacherFormComponent}
+    {path:'teacherForm',component:TeacherFormComponent},
+    {path:'reactiveForm',component:ReactiveFormComponent}
+
 ];
