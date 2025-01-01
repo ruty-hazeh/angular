@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './infromation-popup.component.css'
 })
 export class InfromationPopupComponent {
-  text:string=""
+  text:string="text";
   ShowPopUp(txt:string){
       this.text=txt;
   }

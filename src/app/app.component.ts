@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { StudentListComponent } from '../components/student-list/student-list.component';
 import { StudentDetailsComponent } from '../components/student-details/student-details.component';
 import { Teacher } from '../models/teacher';
@@ -8,7 +8,8 @@ import { IconsTextPipe } from '../pipes/icons-text.pipe';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,StudentListComponent,StudentDetailsComponent,TeacherFormComponent,IconsTextPipe],
+  imports: [RouterOutlet,StudentListComponent,StudentDetailsComponent,TeacherFormComponent,
+    IconsTextPipe, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
