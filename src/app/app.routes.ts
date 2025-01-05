@@ -6,7 +6,7 @@ import { StudentDetailsComponent } from '../components/student-details/student-d
 import { StudentListComponent } from '../components/student-list/student-list.component';
 import { TeacherFormComponent } from '../components/teacher-form/teacher-form.component';
 import { ReactiveFormComponent } from '../components/reactive-form/reactive-form.component';
-
+import { CoursesListComponent } from '../components/courses-list/courses-list.component';
 export const routes: Routes = [
     // {path:'',component:AppComponent},
     {path:'courses',component:CoursesComponent},
@@ -14,6 +14,7 @@ export const routes: Routes = [
     {path:'studentDetails',component:StudentDetailsComponent},
     {path:'studentList',component:StudentListComponent},
     {path:'teacherForm',component:TeacherFormComponent},
-    {path:'reactiveForm',component:ReactiveFormComponent}
+    {path:'reactiveForm',component:ReactiveFormComponent},
+    {path:'courseList',component:CoursesListComponent}
 
 ];
