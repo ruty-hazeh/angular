@@ -1,0 +1,12 @@
+
+<div>
+    <p class="title">Sign In</p>
+    <form [formGroup]="SignInForm" (ngSubmit)="SignIn()">
+        <input type="text" name="name" placeholder="name" formControlName="name">
+        <br>
+        <input type="password" name="password" placeholder="password" formControlName="password">
+        <br>
+        <button type="submit">Sign In</button>
+    </form>
+
+</div>

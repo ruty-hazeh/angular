@@ -8,6 +8,9 @@ import { TeacherFormComponent } from '../components/teacher-form/teacher-form.co
 import { ReactiveFormComponent } from '../components/reactive-form/reactive-form.component';
 import { CoursesListComponent } from '../components/courses-list/courses-list.component';
 import { ApiComponent } from '../components/api/api.component';
+import { AuthComponent } from '../components/auth/auth.component';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { authGuard } from '../guards/auth.guard';
 export const routes: Routes = [
     // {path:'',component:AppComponent},
     {path:'courses',component:CoursesComponent},
@@ -18,5 +21,6 @@ export const routes: Routes = [
     {path:'reactiveForm',component:ReactiveFormComponent},
     {path:'courseList',component:CoursesListComponent},
     {path:'api',component:ApiComponent},
-
+    {path:'auth',component:AuthComponent},
+    {path:'dashboard',component:DashboardComponent, canActivate: [authGuard],},
 ];
