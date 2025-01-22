@@ -11,6 +11,8 @@ import { ApiComponent } from '../components/api/api.component';
 import { AuthComponent } from '../components/auth/auth.component';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { authGuard } from '../guards/auth.guard';
+import { UserDetailsComponent } from '../components/user-details/user-details.component';
+import { UsersChartComponent } from '../components/users-chart/users-chart.component';
 export const routes: Routes = [
     // {path:'',component:AppComponent},
     {path:'courses',component:CoursesComponent},
@@ -23,4 +25,6 @@ export const routes: Routes = [
     {path:'api',component:ApiComponent},
     {path:'auth',component:AuthComponent},
     {path:'dashboard',component:DashboardComponent, canActivate: [authGuard],},
+    {path:'users-chart',component:UsersChartComponent, canActivate: [authGuard],},
+    { path: 'user-details/:userId', component: UserDetailsComponent },
 ];

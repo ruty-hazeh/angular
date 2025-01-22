@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 import { FormControl, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
+import { UsersService } from '../../services/users.service';
+
 @Component({
   selector: 'app-auth',
   standalone: true,
@@ -12,15 +14,23 @@ export class AuthComponent {
 
   SignInForm=new FormGroup({
     name:new FormControl<string>('',[Validators.required]),
-    password:new FormControl<string>('',[Validators.required]),
+    id:new FormControl<number|null>(null,[Validators.required]),
   })
-  constructor(private authService:AuthService){}
+  constructor(private userService:UserService,private usersService: UsersService){}
 
 
   SignIn() {
     if(this.SignInForm.valid){
-      this.authService.signIn(this.SignInForm.value.name as string,
-      this.SignInForm.value.password as string);
+      const name = this.SignInForm.value.name as string;
+      const id = this.SignInForm.value.id as number;
+      const user = this.usersService.getUserById( id);
+
+      if (user) {
+        this.userService.signIn(name, id);
     }
+    
   }
+}
+
+
 }
