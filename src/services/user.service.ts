@@ -6,15 +6,15 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private user: User = { 
-    id: 0, 
-    name: '', 
-    age: 0, 
+  private user: User = {
+    id: 0,
+    name: '',
+    age: 0,
   };
 
   public isUser: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   getUser() {
     return this.user;
@@ -24,11 +24,13 @@ export class UserService {
     this.user.name = name;
     this.user.id = id;
     this.isUser = true;
+    localStorage.setItem("user", JSON.stringify(this.user));
     this.router.navigate(['/users-chart']);
   }
 
   signOut() {
     this.isUser = false;
+    localStorage.removeItem("user");
     this.router.navigate(['/auth']);
   }
 }
